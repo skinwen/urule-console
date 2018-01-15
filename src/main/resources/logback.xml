@@ -35,7 +35,7 @@
     <!-- 按“天”和“大小”生成日志文件 -->
     <appender name="rollingFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!-- 日志存储路径，以及日志名称 -->
-        <file>logs/logback_myDemo.log</file>
+        <file>logs/urule-normal.log</file>
         <!-- 基于时间的生成日志文件策略 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 按“天”生成日志文件，"%i"代表第几个文件（从0自增），并压缩成.zip包 -->
