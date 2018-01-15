@@ -9,13 +9,14 @@
     <!-- 默认上下文名称为“default”。设置成其他名字，用于区分不同应用程序的记录。一旦设置，不能修改。 -->
     <contextName>URULE</contextName>
 
-    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
-    <conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+    <conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter"/>
+    <conversionRule conversionWord="wex"
+                    converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter"/>
     <conversionRule conversionWord="wEx"
-                    converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+                    converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter"/>
 
     <property name="CONSOLE_LOG_PATTERN"
-              value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %class{80}.%method:%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
+              value="${CONSOLE_LOG_PATTERN:-%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %class{80}.%method:%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
     <!-- 输出日志到控制台 -->
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <!--对日志进行格式化 -->
@@ -39,7 +40,7 @@
         <!-- 基于时间的生成日志文件策略 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 按“天”生成日志文件，"%i"代表第几个文件（从0自增），并压缩成.zip包 -->
-            <fileNamePattern>logs/logback_myDemo-%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <fileNamePattern>logs/urule-%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
             <!-- 保留15天 -->
             <maxHistory>15</maxHistory>
             <!-- 在基于时间的基础上，基于文件大小生成日志文件策略 -->
@@ -60,8 +61,8 @@
          level:用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF-->
     <root level="INFO">
         <!-- 启用控制台输出日志 -->
-        <appender-ref ref="console" />
+        <appender-ref ref="console"/>
         <!-- 启用滚动文档输出日志 -->
-        <appender-ref ref="rollingFile" />
+        <appender-ref ref="rollingFile"/>
     </root>
 </configuration>
